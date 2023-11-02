@@ -1,8 +1,8 @@
 import { FastifyInstance } from "fastify";
-import { UserController } from "../controllers/UserController";
+import { productControllerFactory } from "../factories/product-controller-factory";
 
-const userController = new UserController()
+const productController = productControllerFactory()
 
 export async function userRoutes (server: FastifyInstance) {
-    server.get('/user', userController.getUsers)
+    server.get('/user', productController.createProduct)
 }
