@@ -17,7 +17,6 @@
     "@prisma/client": "^5.5.2",
     "fastify": "^4.24.3",
     "inversify": "^6.0.2",
-    "inversify-express-utils": "^6.4.6",
     "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
