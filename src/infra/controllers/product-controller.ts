@@ -1,6 +1,7 @@
 import { FastifyRequest } from "fastify";
 import { CreateProductUseCase } from "../../application/usecases/create-product";
 import { Product } from "../../domain/entities/Product";
+import { randomUUID } from "crypto";
 
 export class ProductController {
     constructor(
@@ -13,7 +14,7 @@ export class ProductController {
         console.log({ title, description, price })
 
         return this.createProductUseCase.execute({
-            id: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+            id: randomUUID(),
             title,
             description,
             price,
