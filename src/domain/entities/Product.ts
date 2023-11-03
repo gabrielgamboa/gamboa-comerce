@@ -5,3 +5,9 @@ export interface Product extends Base {
   description: string
   price: number
 }
+
+export interface CreateProduct {
+  title: string
+  description: string
+  price: number
+}
