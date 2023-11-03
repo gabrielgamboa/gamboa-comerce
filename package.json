@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.5.2",
-    "fastify": "^4.24.3"
+    "fastify": "^4.24.3",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.1.13"
   },
   "devDependencies": {
     "@types/node": "^20.8.10",

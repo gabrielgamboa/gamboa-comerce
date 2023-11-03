@@ -1,6 +1,5 @@
-interface Base {
+export interface Base {
   id: string;
-  createdAt?: Date;
-  updatedAt?: Date;
-  deletedAt?: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
