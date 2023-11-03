@@ -3,6 +3,7 @@ import { productControllerFactory } from "../factories/product-controller-factor
 
 const productController = productControllerFactory()
 
+
 export async function userRoutes (server: FastifyInstance) {
     server.post('/products', productController.createProduct)
 }
