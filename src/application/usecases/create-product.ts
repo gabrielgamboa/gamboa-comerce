@@ -15,8 +15,6 @@ export class CreateProductUseCase {
     const product = await this.productRepository.create({
       ...data,
       id: randomUUID(),
-      createdAt: new Date(),
-      updatedAt: new Date(),
     })
     return product
   }
