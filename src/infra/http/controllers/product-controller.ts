@@ -10,8 +10,6 @@ export class ProductController {
     async createProduct(req: HttpRequest): Promise<HttpResponse> {
         const { title, description, price } = req.body as CreateProduct
 
-        console.log({ title, description, price })
-
         const product = await this.createProductUseCase.execute({
             title,
             description,

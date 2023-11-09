@@ -10,4 +10,11 @@ export class ProductPrismaRepository implements ProductRepository {
       data: product,
     })
   }
+
+  async findByTitle(title: string): Promise<Product | null> {
+    return this.usersRepository.findFirst({
+      where: { title }
+    })
+  }
+  
 }
