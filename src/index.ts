@@ -1,4 +1,4 @@
-import { Server } from "./infra/server/fastify-server"
+import { Server } from "./infra/http/server/fastify-server"
 
 (async function() {
   new Server()

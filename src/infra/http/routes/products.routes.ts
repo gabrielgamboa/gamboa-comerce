@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { productControllerFactory } from "../factories/product-controller-factory";
+import { productControllerFactory } from "../../factories/product-controller-factory";
 
 const productController = productControllerFactory()
 

@@ -1,14 +1,13 @@
-import { FastifyRequest } from "fastify";
-import { CreateProductUseCase } from "../../application/usecases/create-product";
-import { CreateProduct } from "../../domain/entities/Product";
-import { HttpResponse } from "../helpers";
+import { CreateProductUseCase } from "../../../application/usecases/create-product";
+import { CreateProduct } from "../../../domain/entities/Product";
+import { HttpRequest, HttpResponse } from "../../helpers";
 
 export class ProductController {
     constructor(
         private readonly createProductUseCase: CreateProductUseCase
     ) {}
 
-    async createProduct(req: FastifyRequest): Promise<HttpResponse> {
+    async createProduct(req: HttpRequest): Promise<HttpResponse> {
         const { title, description, price } = req.body as CreateProduct
 
         console.log({ title, description, price })

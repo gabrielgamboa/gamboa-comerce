@@ -1,5 +1,7 @@
 import Fastify, { FastifyInstance } from "fastify";
 import { productRoutes } from "../routes";
+import { MissingParamError } from "../../../shared/errors/missing-param-error";
+import { errorHandler } from "../middlewares/error-handler";
 
 export class Server {
     fastifyServer: FastifyInstance | undefined
@@ -14,6 +16,7 @@ export class Server {
         })
         
         fastifyServer.register(productRoutes)
+        fastifyServer.setErrorHandler(errorHandler)
 
         try {
             await fastifyServer.listen({ port: 3000 })
