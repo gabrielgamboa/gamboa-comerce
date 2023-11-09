@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { CreateProduct, Product } from "../../domain/entities/Product";
+import { CreateProduct } from "../../domain/entities/Product";
 import { ProductRepository } from "../../domain/repositories/product-repository";
 
 export class CreateProductUseCase {

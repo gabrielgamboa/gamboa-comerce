@@ -1,7 +1,6 @@
 import { FastifyRequest } from "fastify";
 import { CreateProductUseCase } from "../../application/usecases/create-product";
-import { CreateProduct, Product } from "../../domain/entities/Product";
-import { randomUUID } from "crypto";
+import { CreateProduct } from "../../domain/entities/Product";
 import { HttpResponse } from "../helpers";
 
 export class ProductController {

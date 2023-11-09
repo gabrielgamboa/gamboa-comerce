@@ -1,0 +1,2 @@
+-- colocar script para criar banco postgres com as devidas envs
+-- depois trocar para docker-compose.yml
