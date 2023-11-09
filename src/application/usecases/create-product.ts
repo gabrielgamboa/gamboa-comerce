@@ -1,6 +1,6 @@
 import { randomUUID } from "crypto";
 import { CreateProduct } from "../../domain/entities/Product";
-import { ProductRepository } from "../../domain/repositories/product-repository";
+import { ProductRepository } from "../../domain/repositories/products-repository";
 import { AlreadyExistsError, MissingParamError } from "../../shared/errors";
 
 export class CreateProductUseCase {

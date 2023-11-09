@@ -1,12 +1,19 @@
-// import { randomUUID } from "crypto";
-// import { CreateProduct } from "../../domain/entities/Product";
-// import { ProductRepository } from "../../domain/repositories/product-repository";
+import { randomUUID } from "crypto";
+import { CreateUserDTO } from "../../../domain/dtos/user-dto";
+import { UsersRepository } from "../../../domain/repositories/users-repository";
+import { User } from "../../../domain/entities/User";
 
-// export class CreateProductUseCase {
-//   constructor(
-//     private readonly productRepository: ProductRepository
-//   ) {}
+export class CreateProductUseCase {
+  constructor(
+    private readonly usersRepository: UsersRepository
+  ) {}
 
-//   async execute(data: CreateProduct) {
-//   }
-// }
+  async execute(data: CreateUserDTO): Promise<User> {
+    const user = await this.usersRepository.create({
+        id: randomUUID(),
+        ...data
+    })
+
+    return user
+  }
+}
