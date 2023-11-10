@@ -1,7 +1,7 @@
 import { randomUUID } from "crypto";
 import { CreateProduct } from "../../domain/entities/Product";
 import { ProductRepository } from "../../domain/repositories/products-repository";
-import { AlreadyExistsError, MissingParamError } from "../../shared/errors";
+import { BusinessError } from "../../shared/errors/business-error";
 
 export class CreateProductUseCase {
   constructor(
@@ -10,7 +10,7 @@ export class CreateProductUseCase {
 
   async execute(data: CreateProduct) {
     const productAlreadyExists = await this.productRepository.findByTitle(data.title);
-    if (productAlreadyExists) throw new AlreadyExistsError('Product')
+    if (productAlreadyExists) throw new BusinessError('Product already exists')
 
     const product = await this.productRepository.create({
       ...data,

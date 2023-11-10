@@ -1,7 +1,6 @@
 import Fastify, { FastifyInstance } from "fastify";
-import { productRoutes } from "../routes";
-import { MissingParamError } from "../../../shared/errors/missing-param-error";
 import { errorHandler } from "../middlewares/error-handler";
+import { registerAllRoutes } from "./register-routes";
 
 export class Server {
     fastifyServer: FastifyInstance | undefined
@@ -14,8 +13,10 @@ export class Server {
         const fastifyServer: FastifyInstance = Fastify({
             logger: true,
         })
+
+
+        registerAllRoutes(fastifyServer)
         
-        fastifyServer.register(productRoutes)
         fastifyServer.setErrorHandler(errorHandler)
 
         try {

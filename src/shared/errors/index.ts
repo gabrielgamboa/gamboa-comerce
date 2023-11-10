@@ -1,2 +1,2 @@
 export * from './missing-param-error'
-export * from './already-exists-error'
+export * from './business-error'
